@@ -63,11 +63,7 @@ EOT
     end
 
     uri = "/pdb/query/#{version}/#{endpoint}"
-    if source == 'function'
-      uri += URI.escape "?query=#{query.to_json}" unless query.nil? || query.empty?
-    else
-      uri += "?query=#{query.to_json}" unless query.nil? || query.empty?
-    end
+    uri += "?query=#{query.to_json}" unless query.nil? || query.empty?
 
     debug("PuppetDB query: #{query.to_json}")
 
